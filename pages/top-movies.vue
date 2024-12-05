@@ -1,9 +1,9 @@
 <template>
   <div>
-    <ol class="space-y-5">
+    <ol class="flex gap-4">
       <MovieCard title="Misja Kleopatra" year="2004" />
-      <MovieCard title="Shrek 2" year="2004" />
-      <MovieCard title="Pulcino" year="2004" />
+      <MovieCard title="Shrek 2" year="2003" />
+      <MovieCard title="Pulcino" year="2001" />
     </ol>
   </div>
 </template>

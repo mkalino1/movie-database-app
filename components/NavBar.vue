@@ -1,10 +1,10 @@
 <template>
-  <nav class="w-screen bg-zinc-900 shadow-xl">
+  <nav class="bg-zinc-900 shadow-xl">
     <ol
-      class="flex content-center justify-center gap-12 font-mono font-bold leading-relaxed"
+      class="flex content-center justify-center gap-12 font-bold leading-relaxed"
     >
       <li>
-        <NuxtLink to="/">Home page sads </NuxtLink>
+        <NuxtLink to="/">Home page </NuxtLink>
       </li>
       <li>
         <NuxtLink to="/top-movies">Top movies</NuxtLink>

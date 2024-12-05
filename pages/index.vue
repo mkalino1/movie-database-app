@@ -1,15 +1,13 @@
 <template>
-  <div
-    class="prose mx-auto mt-8 max-w-xl bg-zinc-600 p-8 text-justify text-zinc-300"
-  >
-    <h2>This is the home page! Hello :)</h2>
-    <p>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse suscipit
-      odit dicta debitis nostrum corporis earum at iusto facilis explicabo
-      molestias consequatur dolore ad officia repellendus voluptate minus cum
-      quidem quia, tempore laboriosam. Tempora, illo aut maxime eaque maiores
-      repellendus repudiandae aliquam, cum accusamus sint blanditiis excepturi
-      at eligendi magnam.
-    </p>
+  <div>
+    <WelcomeBanner />
+    <div class="p-6">
+      <h4 class="mb-2 text-xl">Popular movies</h4>
+      <ol class="flex gap-4">
+        <MovieCard title="Misja Kleopatra" year="2004" />
+        <MovieCard title="Shrek 2" year="2003" />
+        <MovieCard title="Pulcino" year="2001" />
+      </ol>
+    </div>
   </div>
 </template>

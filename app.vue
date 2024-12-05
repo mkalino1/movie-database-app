@@ -1,14 +1,15 @@
 <template>
-  <div class="h-screen bg-zinc-700 text-zinc-300">
+  <div class="font-mono text-zinc-300">
     <NuxtRouteAnnouncer />
     <NavBar />
-    <div class="mx-auto max-w-3xl overflow-auto bg-zinc-800">
-      <NuxtPage />
-    </div>
+    <NuxtPage />
   </div>
 </template>
 
 <style>
+:root {
+  @apply bg-slate-950;
+}
 .page-enter-active,
 .page-leave-active {
   transition: all 0.3s;

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <WelcomeBanner />
+    <MovieBanner />
     <div class="p-6">
       <h4 class="mb-2 text-xl">Popular movies</h4>
       <ol class="flex gap-4">

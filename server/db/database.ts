@@ -16,7 +16,6 @@ export const initDb = async () => {
       )
     `);
 
-    console.log("Database initialized successfully");
     return db;
   } catch (error) {
     console.error("Failed to initialize database:", error);

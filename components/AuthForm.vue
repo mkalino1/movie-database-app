@@ -39,7 +39,7 @@ const password = ref("");
 
 defineProps<{ loading?: boolean; title: string }>();
 const emit = defineEmits<{
-  submit: [payload: { username: string; password: string }];
+  submit: [{ username: string; password: string }];
 }>();
 
 const submit = () => {

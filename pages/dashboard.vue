@@ -8,7 +8,7 @@
       <p>Logged in since {{ session.loggedInAt }}</p>
       <p>This is your personal page. You will see your favourite movies here</p>
       <FavouriteMovies />
-      <button @click="clear">Log out</button>
+      <button @click="logout">Log out</button>
     </template>
     <p v-else>
       Hi Guest,
@@ -18,6 +18,13 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({ middleware: "auth-middleware" });
 const { loggedIn, user, session, clear, fetch } = useUserSession();
 fetch();
+
+const router = useRouter();
+function logout() {
+  clear();
+  router.push({ name: "index" });
+}
 </script>

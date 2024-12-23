@@ -1,4 +1,4 @@
-import { initDb } from "~/server/db/database";
+import { initDb } from "~/server/db/databaseInit";
 
 export default defineEventHandler(async (event) => {
   const db = await initDb(); // Initialize database connection

@@ -28,24 +28,6 @@ export const initDb = async () => {
       )
     `);
 
-    // db.run(
-    //   `INSERT INTO movies (
-    //   name,
-    //   description,
-    //   releaseDate,
-    //   genre,
-    //   director,
-    //   runtime) VALUES (?, ?, ?, ?, ?, ?)`,
-    //   [
-    //     "Pulcino Powraca",
-    //     "Kolejna odsłona przeuroczego filmu o przygodach pulcina. Poznaje on cudownych przyjaciół i przeżywa wiele przygód.",
-    //     "2018-05-12",
-    //     "Komedia",
-    //     "Pulcino",
-    //     "1h 20min",
-    //   ],
-    // );
-
     await db.exec(`
       CREATE TABLE IF NOT EXISTS favourites (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -55,13 +37,6 @@ export const initDb = async () => {
         FOREIGN KEY(movie) REFERENCES movies(id)
       )
     `);
-
-    // db.run(
-    //   `INSERT INTO favourites (
-    //   movie,
-    //   user) VALUES (?, ?)`,
-    //   [2, 1],
-    // );
 
     return db;
   } catch (error) {

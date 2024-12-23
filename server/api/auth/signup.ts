@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-import { initDb } from "../../db/database";
+import { initDb } from "../../db/databaseInit";
 
 export default defineEventHandler(async (event) => {
   try {
@@ -15,6 +15,7 @@ export default defineEventHandler(async (event) => {
     }
 
     const db = await initDb(); // Initialize database connection
+    // hashPassword from Nuxt Auth Utils should also be available
     const hashedPassword = await bcrypt.hash(password, 10); // Hash password
 
     try {

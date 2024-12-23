@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-import { initDb } from "../../db/database";
+import { initDb } from "../../db/databaseInit";
 
 export default defineEventHandler(async (event) => {
   try {

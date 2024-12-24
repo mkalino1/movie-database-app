@@ -12,5 +12,3 @@
 <script lang="ts" setup>
 defineProps<{ title: string; year: string }>();
 </script>
-
-<style></style>

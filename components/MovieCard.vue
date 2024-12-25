@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink to="movie/1">
+  <NuxtLink :to="`movie/${id}`">
     <div
       class="prose flex h-96 w-72 flex-col items-end justify-end rounded-md bg-gradient-to-tl from-slate-400 to-slate-700 p-8"
     >
@@ -10,5 +10,5 @@
 </template>
 
 <script lang="ts" setup>
-defineProps<{ title: string; year: string }>();
+defineProps<{ title: string; year: string, id: string }>();
 </script>

@@ -14,6 +14,7 @@ const router = useRouter();
 
 const login = async (body: { username: string; password: string }) => {
   loading.value = true;
+  // TODO: After login it stays on the page
   try {
     await $fetch("/api/auth/login", {
       method: "POST",

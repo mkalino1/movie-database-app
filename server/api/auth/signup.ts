@@ -5,13 +5,19 @@ export default defineEventHandler(async (event) => {
   try {
     const body = await readBody(event); // Retrieve request body
     if (!body) {
-      return { error: "Request body is empty or undefined" };
+      return createError({
+        statusCode: 400,
+        statusMessage: "Request body is empty or undefined",
+      });
     }
 
     const { username, password } = body;
 
     if (!username || !password) {
-      return { error: "Username and password are required" };
+      return createError({
+        statusCode: 400,
+        statusMessage: "Username and password are required",
+      });
     }
 
     const db = await initDb(); // Initialize database connection

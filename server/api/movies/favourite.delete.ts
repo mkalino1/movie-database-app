@@ -18,7 +18,7 @@ export default defineEventHandler(async (event) => {
   const user = await db.get(userQuery, [session.user?.username]);
 
   const favouriteQuery = `
-    INSERT INTO favourites (user, movie) VALUES (?, ?)
+    DELETE FROM favourites WHERE user=? AND movie=?
   `;
 
   await db.run(favouriteQuery, [user.id, body.movieId]);

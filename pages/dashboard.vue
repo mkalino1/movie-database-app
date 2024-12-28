@@ -22,9 +22,8 @@ definePageMeta({ middleware: "auth-middleware" });
 const { loggedIn, user, session, clear, fetch } = useUserSession();
 fetch();
 
-const router = useRouter();
 function logout() {
   clear();
-  router.push({ name: "index" });
+  navigateTo("/");
 }
 </script>

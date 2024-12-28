@@ -10,17 +10,17 @@
 
 <script setup lang="ts">
 const loading = ref(false);
-const router = useRouter();
+const { fetch: refreshSession } = useUserSession();
 
 const login = async (body: { username: string; password: string }) => {
   loading.value = true;
-  // TODO: After login it stays on the page
   try {
     await $fetch("/api/auth/login", {
       method: "POST",
       body,
     });
-    router.push({ name: "dashboard" });
+    await refreshSession();
+    navigateTo("/dashboard");
     loading.value = false;
   } catch (error) {
     alert(error.statusMessage || error);

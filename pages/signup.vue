@@ -10,7 +10,6 @@
 
 <script setup lang="ts">
 const loading = ref(false);
-const router = useRouter();
 
 const register = async (body: { username: string; password: string }) => {
   loading.value = true;
@@ -19,7 +18,7 @@ const register = async (body: { username: string; password: string }) => {
       method: "POST",
       body,
     });
-    router.push({ name: "dashboard" });
+    navigateTo("/dashboard");
     loading.value = false;
   } catch (error) {
     alert(error.statusMessage || error);

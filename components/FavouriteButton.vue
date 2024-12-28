@@ -1,5 +1,5 @@
 <template>
-  <button class="mb-48" @click.prevent="toggleFavourite">{{ buttonText }}</button>
+  <button v-if="loggedIn" class="mb-48" @click.prevent="toggleFavourite">{{ buttonText }}</button>
 </template>
 
 <script lang="ts" setup>
@@ -7,6 +7,7 @@ const props = defineProps<{ movieId: number }>()
 const loading = ref(false);
 
 const { data, refresh } = useFetch("/api/movies/favourite");
+const { loggedIn } = useUserSession()
 
 const isFavourite = computed(() => {
   return data.value?.some(el => el.id === props.movieId);

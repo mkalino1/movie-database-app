@@ -1,13 +1,16 @@
 import { initDb } from "~/server/db/databaseInit";
 
 export default defineEventHandler(async (event) => {
+  const { user: userSession } = await requireUserSession(event)
+
   const db = await initDb(); // Initialize database connection
 
-  const session = await getUserSession(event)
   const userQuery = `
     SELECT id FROM users WHERE username = ?
   `;
-  const user = await db.get(userQuery, [session.user?.username]);
+  const user = await db.get(userQuery, [userSession?.username]);
+
+  if (user?.id === undefined) return [];
 
   const query = `
     SELECT movie AS id, name, releaseDate

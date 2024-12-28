@@ -14,5 +14,9 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ['@nuxt/eslint', 'nuxt-auth-utils']
+  modules: [
+    '@nuxt/eslint',
+    'nuxt-auth-utils',
+    '@nuxt/icon'
+  ]
 })

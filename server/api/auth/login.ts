@@ -3,7 +3,7 @@ import { initDb } from "../../db/databaseInit";
 
 export default defineEventHandler(async (event) => {
   try {
-    const body = await readBody(event); // Retrieve request body
+    const body = await readBody(event);
     if (!body) {
       console.error("Request body is empty or undefined");
       return createError({
@@ -22,7 +22,7 @@ export default defineEventHandler(async (event) => {
       });
     }
 
-    const db = await initDb(); // Initialize database connection
+    const db = await initDb();
     const user = await db.get("SELECT * FROM users WHERE username = ?", [
       username,
     ]);

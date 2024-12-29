@@ -3,7 +3,7 @@ import { initDb } from "../../db/databaseInit";
 
 export default defineEventHandler(async (event) => {
   try {
-    const body = await readBody(event); // Retrieve request body
+    const body = await readBody(event);
     if (!body) {
       return createError({
         statusCode: 400,
@@ -20,7 +20,7 @@ export default defineEventHandler(async (event) => {
       });
     }
 
-    const db = await initDb(); // Initialize database connection
+    const db = await initDb();
     // TODO: hashPassword from Nuxt Auth Utils should also be available
     const hashedPassword = await bcrypt.hash(password, 10); // Hash password
 

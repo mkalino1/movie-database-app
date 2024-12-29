@@ -1,7 +1,7 @@
 import { initDb } from "~/server/db/databaseInit";
 
 export default defineEventHandler(async (event) => {
-  const db = await initDb(); // Initialize database connection
+  const db = await initDb();
   const query = `
     SELECT * FROM movies
   `;

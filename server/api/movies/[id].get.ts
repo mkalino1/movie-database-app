@@ -1,9 +1,9 @@
 import { initDb } from "~/server/db/databaseInit";
 
 export default defineEventHandler(async (event) => {
-  const id = getRouterParam(event, 'id')  
+  const id = getRouterParam(event, 'id')
 
-  const db = await initDb(); // Initialize database connection
+  const db = await initDb();
   const query = `
     SELECT * FROM movies
     WHERE id = ${id}

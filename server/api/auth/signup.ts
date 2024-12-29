@@ -21,16 +21,15 @@ export default defineEventHandler(async (event) => {
     }
 
     const db = await initDb(); // Initialize database connection
-    // hashPassword from Nuxt Auth Utils should also be available
+    // TODO: hashPassword from Nuxt Auth Utils should also be available
     const hashedPassword = await bcrypt.hash(password, 10); // Hash password
 
     try {
-      // Insert user data into database
-      await db.run("INSERT INTO users (username, password) VALUES (?, ?)", [
+      const insertResult = await db.run("INSERT INTO users (username, password) VALUES (?, ?)", [
         username,
         hashedPassword,
       ]);
-      const userData = { username: username };
+      const userData = { username: username, id: insertResult.lastID as number };
       await setUserSession(event, {
         user: userData,
         loggedInAt: new Date(),

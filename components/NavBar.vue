@@ -1,8 +1,6 @@
 <template>
   <nav class="bg-zinc-900 shadow-xl">
-    <ol
-      class="flex content-center justify-center gap-12 font-bold leading-relaxed"
-    >
+    <ol class="flex content-center justify-center gap-12 font-bold leading-relaxed">
       <li>
         <NuxtLink to="/">Home page </NuxtLink>
       </li>
@@ -20,7 +18,7 @@
       </li>
       <li>
         <div v-if="loggedIn">
-          <h1>Welcome {{ user.username }}!</h1>
+          <h1>Welcome {{ user?.username }}!</h1>
         </div>
         <div v-else>
           <h1>Not logged in</h1>

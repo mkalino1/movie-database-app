@@ -1,6 +1,14 @@
-# Nuxt Minimal Starter
+# Movie Database App
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A IMDB-like fullstack web application that allows users to browse movies, rate and pick favourites.
+
+Built with:
+
+- Nuxt and Vue
+- SQLite
+- Typescript
+- Tailwind
+- Nuxt Auth Utils, Nuxt Icon
 
 ## Setup
 

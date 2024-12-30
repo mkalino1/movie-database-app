@@ -1,5 +1,5 @@
 <template>
-  <div class="font-mono text-zinc-300">
+  <div class="text-zinc-300">
     <NuxtRouteAnnouncer />
     <NavBar />
     <NuxtPage />
@@ -9,11 +9,14 @@
 <style>
 :root {
   @apply bg-slate-950;
+  font-family: 'Lato', sans-serif;
 }
+
 .page-enter-active,
 .page-leave-active {
   transition: all 0.3s;
 }
+
 .page-enter-from,
 .page-leave-to {
   opacity: 0;

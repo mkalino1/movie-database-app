@@ -18,6 +18,7 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     'nuxt-auth-utils',
     '@nuxt/icon',
-    '@nuxt/fonts'
+    '@nuxt/fonts',
+    '@nuxt/test-utils'
   ]
 })

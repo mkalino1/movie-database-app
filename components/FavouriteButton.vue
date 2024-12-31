@@ -8,11 +8,11 @@
 const props = defineProps<{ movieId: number }>()
 const loading = ref(false);
 
-const { data, refresh } = useFetch("/api/movies/favourite");
+const { data: favourites, refresh } = useFetch("/api/movies/favourite");
 const { loggedIn } = useUserSession()
 
 const isFavourite = computed(() => {
-  return data.value?.some(el => el.id === props.movieId);
+  return favourites.value?.some(el => el.id === props.movieId);
 })
 
 const iconName = computed(() => {

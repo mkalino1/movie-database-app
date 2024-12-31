@@ -20,7 +20,6 @@ describe('Auth form', () => {
 
         expect(wrapper.emitted()).toHaveProperty('submit')
         const submitEvent = wrapper.emitted('submit')
-        console.log(submitEvent)
         expect(submitEvent).toHaveLength(1)
         expect(submitEvent?.[0]).toEqual([{
             username: 'myuser',

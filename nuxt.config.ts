@@ -19,6 +19,6 @@ export default defineNuxtConfig({
     'nuxt-auth-utils',
     '@nuxt/icon',
     '@nuxt/fonts',
-    '@nuxt/test-utils'
+    '@nuxt/test-utils/module'
   ]
 })

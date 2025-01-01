@@ -21,8 +21,7 @@ export default defineEventHandler(async (event) => {
     }
 
     const db = await initDb();
-    // TODO: hashPassword from Nuxt Auth Utils should also be available
-    const hashedPassword = await bcrypt.hash(password, 10); // Hash password
+    const hashedPassword = await hashPassword(password);
 
     try {
       const insertResult = await db.run("INSERT INTO users (username, password) VALUES (?, ?)", [

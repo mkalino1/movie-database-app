@@ -28,7 +28,7 @@ export default defineEventHandler(async (event) => {
     ]);
 
     // For security reasons, do not specify if username or password is incorrect
-    if (!user || !(await bcrypt.compare(password, user.password))) {
+    if (!user || !(await verifyPassword(user.password, password))) {
       console.error(`Invalid username or password for user: ${username}`);
       return createError({
         statusCode: 401,

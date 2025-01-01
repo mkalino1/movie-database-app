@@ -15,7 +15,6 @@
     "@nuxt/fonts": "^0.10.3",
     "@nuxt/icon": "^1.10.3",
     "@vue/eslint-config-prettier": "^10.1.0",
-    "bcrypt": "^5.1.1",
     "eslint": "^9.16.0",
     "nuxt": "^3.14.1592",
     "nuxt-auth-utils": "^0.5.5",

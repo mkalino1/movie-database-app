@@ -38,6 +38,17 @@ export const initDb = async () => {
       )
     `);
 
+    await db.exec(`
+      CREATE TABLE IF NOT EXISTS ratings (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        movie INTEGER,
+        user INTEGER,
+        score INTEGER,
+        FOREIGN KEY(user) REFERENCES users(id),
+        FOREIGN KEY(movie) REFERENCES movies(id)
+      )
+    `);
+
     return db;
   } catch (error) {
     console.error("Failed to initialize database:", error);

@@ -1,8 +1,8 @@
 <template>
   <div class="mx-auto max-w-[800px]">
-    <div class="flex gap-6">
-      <Icon v-for="i in 5" :name="i <= hoveredIndex ? 'carbon:star-filled' : 'carbon:star'" @click="rate(i)"
-        @mouseover="hoveredIndex = i" @mouseleave="hoveredIndex = -1" size="38" style="color: cadetblue;" />
+    <div class="flex">
+      <Icon v-for="i in 5" :name="i <= lastStarToShow ? 'carbon:star-filled' : 'carbon:star'" @click="rate(i)"
+        @mouseover="hoveredIndex = i" @mouseleave="hoveredIndex = 0" size="38" style="color: cadetblue;" class="px-6" />
     </div>
     <h4 class="my-6 text-3xl">Storyline</h4>
     <p>{{ description }}</p>
@@ -38,8 +38,11 @@ const props = defineProps<{
   id: number
 }>();
 
-const hoveredIndex = ref(-1)
+const { data, refresh } = await useFetch(`/api/movies/rating/${props.id}`)
 const { loggedIn } = useUserSession()
+
+const hoveredIndex = ref(0)
+const lastStarToShow = computed(() => hoveredIndex.value || data.value.score)
 
 async function rate(score: number) {
   if (!loggedIn.value) {
@@ -51,6 +54,7 @@ async function rate(score: number) {
       method: "POST",
       body: { movieId: props.id, score: score }
     });
+    refresh()
   } catch (error) {
     alert(error.statusMessage || error);
   }

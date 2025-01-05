@@ -19,7 +19,7 @@ describe('Favourite button', () => {
     it('rendrer if logged in', async () => {
         const wrapper = await mountSuspended(FavouriteButton, { props: { movieId: 1 } })
 
-        expect(wrapper.html()).toContain('class="iconify i-carbon:star"')
+        expect(wrapper.html()).toContain('class="iconify i-carbon:favorite"')
     })
 
     it('rendrer filled star if logged in and already favourited', async () => {
@@ -27,7 +27,7 @@ describe('Favourite button', () => {
 
         const wrapper = await mountSuspended(FavouriteButton, { props: { movieId: 1 } })
 
-        expect(wrapper.html()).toContain('class="iconify i-carbon:star-filled"')
+        expect(wrapper.html()).toContain('class="iconify i-carbon:favorite-filled"')
     })
 })
 

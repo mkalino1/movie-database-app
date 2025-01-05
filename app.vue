@@ -1,5 +1,6 @@
 <template>
   <div class="text-zinc-300">
+    <NuxtLoadingIndicator color="#fed250" :height="5" :throttle="0" />
     <NuxtRouteAnnouncer />
     <NavBar />
     <NuxtPage />

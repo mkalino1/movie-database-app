@@ -17,7 +17,7 @@ const isFavourite = computed(() => {
 
 const iconName = computed(() => {
   if (loading.value) { return 'svg-spinners:180-ring-with-bg' };
-  return isFavourite.value ? 'carbon:star-filled' : 'carbon:star';
+  return isFavourite.value ? 'carbon:favorite-filled' : 'carbon:favorite';
 })
 
 async function toggleFavourite() {

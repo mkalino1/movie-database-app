@@ -14,5 +14,5 @@ export default defineEventHandler(async (event) => {
 
   const result = await db.get(query, [user.id, id]);
 
-  return result
+  return result ?? {}
 })
